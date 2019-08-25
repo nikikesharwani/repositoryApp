@@ -16,7 +16,7 @@
     </form>
     <div id="filteredDiv" class="row" *ngIf="filteredRepos.length > 0">
         <div class="row-inner" *ngFor="let repo of filteredRepos;trackBy: trackByFn">
-          <span>{{repo}}</span>
+          <span [innerHTML]="repo | highlighter: searchKey"></span>
         </div>
     </div>
     <div id="noRepository" class="row" *ngIf="reposNotFound">
