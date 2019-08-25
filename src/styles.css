@@ -1,1 +1,263 @@
-/* You can add global styles to this file, and also import other style files */
+/* Main Container and Form Css */
+body {
+    font-size: 17px;
+}
+
+.container {
+    /* padding: 15px;
+    border: 1px solid #c9c8c8; */
+    width: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 14%;
+    left: 25%;
+}
+
+h1 {
+    color: #1b15a9;
+    margin-bottom: 0px !important;
+}
+
+h4 {
+    margin-top: 0px !important;
+}
+
+.container * {
+    box-sizing: border-box;
+}
+
+form {
+    padding: 15px;
+    border: 1px solid #c9c8c8;
+    background-color: #e4e7e8;
+}
+
+.row,
+.row-inner {
+  list-style-type: none;
+  padding: 0;
+}
+
+.row {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.row li, .row-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.row-inner {
+    padding: 0 8px;
+    justify-content: space-between; 
+}
+
+.row > li:not(:last-child) {
+    margin-bottom: 40px;
+}
+  
+.row li input {
+    padding: 12px;
+    line-height: 2px;
+    /* border: none; */
+    width: 75%;
+    height: 41px;
+    border: none !important;
+    border-radius: 4px !important;
+}
+
+.row li button:disabled {
+    background: #71aff1;
+}
+
+.row li button:last-child:disabled {
+    background: #adacac;
+}
+
+.row li button:not(:disabled){
+    background-color: #276fbc;
+}
+
+.row li button:last-child:not(:disabled){
+    background-color: #7e7c7c;
+}
+
+.row li button, .row li button:disabled {
+    margin-left: auto;
+    padding: 12px 15px;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.row li button:not(:disabled) {
+    cursor: pointer;
+}
+
+
+.row-inner li {
+    width: 100px;
+}
+
+.customBtn {
+    position: relative;
+    right: 10%;
+}
+
+#filteredDiv .row-inner, #noRepository .row-inner {
+    /* margin-top: 10px; */
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c9c8c8;
+    border-top: none !important;
+}
+
+input:focus {
+    background-color: #fff !important;
+}
+
+@media only screen and (max-width: 1290px) {
+    .row li input {
+        width: 65%;
+    }
+
+    .customBtn {
+        right: 15%;
+    }
+}
+
+@media only screen and (max-width: 954px) {
+
+    .row li input {
+        width: 64%;
+    }
+
+    .customBtn {
+        right: 14%;
+    }
+}
+
+@media only screen and (max-width: 872px) {
+    .row li input {
+        width: 55%;
+    }
+
+    .customBtn {
+        right: 18%;
+    }
+}
+
+@media only screen and (max-width: 755px) {
+    .row li input {
+        width: 50%;
+    }
+
+    .customBtn {
+        right: 18%;
+    }
+}
+
+@media only screen and (max-width: 655px) {
+    .row li input {
+        width: 48%;
+        padding: 10px;
+        height: 32px;
+
+    }
+
+    .row li button {
+        padding: 10px !important;
+        font-size: 10px !important;
+    }
+
+    .customBtn {
+        right: 21%;
+    }
+}
+
+/*loader csss*/
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+    float: left;
+  }
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 32px 32px;
+  }
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #273377;
+    margin: -3px 0 0 -3px;
+  }
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+    top: 50px;
+    left: 50px;
+  }
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+    top: 54px;
+    left: 45px;
+  }
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+    top: 57px;
+    left: 39px;
+  }
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+    top: 58px;
+    left: 32px;
+  }
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+    top: 57px;
+    left: 25px;
+  }
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+    top: 54px;
+    left: 19px;
+  }
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+  }
+  .lds-roller div:nth-child(7):after {
+    top: 50px;
+    left: 14px;
+  }
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+    top: 45px;
+    left: 10px;
+  }

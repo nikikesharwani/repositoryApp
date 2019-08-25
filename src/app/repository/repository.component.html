@@ -1,3 +1,28 @@
-<p>
-  repository works!
-</p>
+<div class="container">
+    <form autocomplete="off">
+        <ul class="row">
+          <li class="row-inner">
+              <input type="text" name="username" [(ngModel)]="username" placeholder="Enter username"
+              (ngModelChange)="onUsernameChange()" (focus)="oldUsername = username">
+              <button [disabled]="!username" (click)="getRepoNameList()">Go</button>
+              <button [disabled]="!username" (click)="clearUsername(1)">Clear</button>
+          </li>
+          <li class="row-inner">
+              <input type="text" name="searchKey" [(ngModel)]="searchKey" placeholder="Enter keywords to search repository Eg.angular"
+              (ngModelChange)="getFilteredRepos(searchKey)">
+              <button class="customBtn" [disabled]="!searchKey" (click)="clearSearchKey()">Clear</button>
+          </li>
+        </ul>
+    </form>
+    <div id="filteredDiv" class="row" *ngIf="filteredRepos.length > 0">
+        <div class="row-inner" *ngFor="let repo of filteredRepos;trackBy: trackByFn">
+          <span>{{repo}}</span>
+        </div>
+    </div>
+    <div id="noRepository" class="row" *ngIf="reposNotFound">
+        <div class="row-inner">
+            <span>Empty Repository for {{username}}</span>
+        </div>
+    </div>
+</div>
+
