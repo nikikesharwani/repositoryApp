@@ -9,13 +9,15 @@ export class HighlighterPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) { }
 
   // pipe to highlight the matched substring in repos name
-  transform(name: string, searchText: string): SafeHtml {
+  transform(name: string, searchText: string): SafeHtml | string {
 
     if (!name) { return []; }
     if (!searchText) { return name; }
 
-    if (name.toLowerCase().includes(searchText.toLowerCase())) {
-      searchText = name.substring(0, searchText.length);
+    const search = searchText.toLowerCase();
+    if (name.toLowerCase().includes(search)) {
+      const searchedIndex = name.toLowerCase().indexOf(search);
+      searchText = name.substring(searchedIndex, searchedIndex + searchText.length);
     }
     const value = name.replace(
       searchText, `<span style='background-color:yellow'>${searchText}</span>` );

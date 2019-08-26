@@ -16,8 +16,6 @@ export class RepositoryComponent implements OnInit {
 
     -repoNameList is required to subscribe to the repos result API.
 
-    -filteredRepos is required to store filtered repos based on user searched keyword.
-
     -searchKey is related to what keyword user is typing.
 
     -oldUsername is required to validate with username, so that will not
@@ -28,7 +26,6 @@ export class RepositoryComponent implements OnInit {
   */
   username: string;
   repoNameList: string[] = [];
-  filteredRepos: string[] = [];
   searchKey: string;
   oldUsername: string;
   reposNotFound: boolean;
@@ -47,7 +44,6 @@ export class RepositoryComponent implements OnInit {
       this.oldUsername = this.username;
       this.repositoryService.getRepos(this.username).subscribe(result => {
         this.repoNameList = result;
-        this.getFilteredRepos(this.searchKey);
         this.reposNotFound = this.repoNameList.length > 0 ? false : true;
         this.toastr.success('Repositories fetched successfully.');
         $.unblockUI();
@@ -55,19 +51,6 @@ export class RepositoryComponent implements OnInit {
         this.toastr.error(`Repository ${err.error.message} with ${this.username}`);
         $.unblockUI();
       });
-    }
-  }
-
-  // filter reposList based on searched keyword
-  getFilteredRepos(searchedKey: string) {
-    if (searchedKey) {
-      this.filteredRepos = this.repoNameList.filter(repo => {
-        if (repo.toLowerCase().startsWith(searchedKey.toLowerCase())) {
-          return repo;
-        }
-      });
-    } else {
-      this.filteredRepos = this.repoNameList;
     }
   }
 
@@ -82,7 +65,7 @@ export class RepositoryComponent implements OnInit {
     if (this.repoNameList) {
       this.searchKey = '';
     }
-    this.repoNameList.length = this.filteredRepos.length = 0;
+    this.repoNameList.length = 0;
     this.reposNotFound = false;
   }
 
@@ -93,12 +76,6 @@ export class RepositoryComponent implements OnInit {
     if (this.oldUsername && this.oldUsername !== this.username) {
       this.clearUsername();
     }
-  }
-
-  // on clearing searched keyword, clear filteredRepos list
-  clearSearchKey() {
-    this.searchKey = '';
-    this.filteredRepos = this.repoNameList;
   }
 
   // render only new items to list using *ngFor

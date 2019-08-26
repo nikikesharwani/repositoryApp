@@ -9,14 +9,16 @@ import { RepositoryComponent } from './repository/repository.component';
 import { RequestInterceptor } from './helpers/request.interceptor';
 
 import { ToastrModule } from 'ngx-toastr';
-import { HighlighterPipe } from './highlighterpipe/highlighter.pipe';
+import { HighlighterPipe } from './pipes/highlighter/highlighter.pipe';
+import { FilterdataPipe } from './pipes/filterdata/filterdata.pipe';
 declare var $: any;
 
 @NgModule({
   declarations: [
     AppComponent,
     RepositoryComponent,
-    HighlighterPipe
+    HighlighterPipe,
+    FilterdataPipe
   ],
   imports: [
     BrowserModule,

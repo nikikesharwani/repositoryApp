@@ -8,14 +8,13 @@
               <button [disabled]="!username" (click)="clearUsername(1)">Clear</button>
           </li>
           <li class="row-inner">
-              <input type="text" name="searchKey" [(ngModel)]="searchKey" placeholder="Enter keywords to search repository Eg.angular"
-              (ngModelChange)="getFilteredRepos(searchKey)">
-              <button class="customBtn" [disabled]="!searchKey" (click)="clearSearchKey()">Clear</button>
+              <input type="text" name="searchKey" [(ngModel)]="searchKey" placeholder="Enter keywords to search repository Eg.angular">
+              <button class="customBtn" [disabled]="!searchKey" (click)="searchKey = ''">Clear</button>
           </li>
         </ul>
     </form>
-    <div id="filteredDiv" class="row" *ngIf="filteredRepos.length > 0">
-        <div class="row-inner" *ngFor="let repo of filteredRepos;trackBy: trackByFn">
+    <div id="filteredDiv" class="row">
+        <div class="row-inner" *ngFor="let repo of repoNameList | filterdata : searchKey; trackBy: trackByFn">
           <span [innerHTML]="repo | highlighter: searchKey"></span>
         </div>
     </div>
