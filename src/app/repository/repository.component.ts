@@ -12,6 +12,8 @@ declare var $: any;
 export class RepositoryComponent implements OnInit {
 
   /*
+    -title for showing title to the App.
+
     -username is required for fetching all repos.
 
     -repoNameList is required to subscribe to the repos result API.
@@ -24,6 +26,7 @@ export class RepositoryComponent implements OnInit {
     -reposNotFound is required to Empty Repositories Message in case when API call is
     successful but there is no repo available for user.
   */
+  title = 'Repository App';
   username: string;
   repoNameList: string[] = [];
   searchKey: string;
