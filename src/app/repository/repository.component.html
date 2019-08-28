@@ -8,12 +8,12 @@
           <li class="row-inner">
               <input type="text" name="username" [(ngModel)]="username" placeholder="Enter username"
               (ngModelChange)="onUsernameChange()" (focus)="oldUsername = username">
-              <button [disabled]="!username" (click)="getRepoNameList()">Go</button>
-              <button [disabled]="!username" (click)="clearUsername(1)">Clear</button>
+              <button class="go_btn" [disabled]="!username" (click)="getRepoNameList()">Go</button>
+              <button class="username_clear" [disabled]="!username" (click)="clearUsername(1)">Clear</button>
           </li>
           <li class="row-inner">
               <input type="text" name="searchKey" [(ngModel)]="searchKey" placeholder="Enter keywords to search repository Eg.angular">
-              <button class="customBtn" [disabled]="!searchKey" (click)="searchKey = ''">Clear</button>
+              <button class="keywords_clear" [disabled]="!searchKey" (click)="searchKey = ''">Clear</button>
           </li>
         </ul>
     </form>

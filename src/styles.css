@@ -10,6 +10,18 @@ body {
     left: 25%;
 }
 
+.keywords_clear {
+  width: 24%;
+}
+
+.username_clear {
+  width: 13%;
+}
+
+.go_btn {
+  width: 10%
+}
+
 h1 {
     text-align: center;
     color: #1b15a9;
@@ -69,6 +81,7 @@ form {
 
 .row li button:disabled {
     background: #71aff1;
+    
 }
 
 .row li button:last-child:disabled {
@@ -84,13 +97,14 @@ form {
 }
 
 .row li button, .row li button:disabled {
-    margin-left: auto;
+    margin-left: 0;
     padding: 12px 15px;
     border: none;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: .09em;
+    letter-spacing: 0;
     border-radius: 4px;
+
     font-size: 14px;
     font-weight: bold;
 }
@@ -123,64 +137,70 @@ input:focus {
     background-color: #fff !important;
 }
 
-@media only screen and (max-width: 1290px) {
-    .row li input {
-        width: 65%;
-    }
+@media screen and (min-width: 1024px) and (max-width: 1140px) {
+  .row li button, .row li button:disabled {
+    font-size: 10px;
+    padding: 12px 12px;
+  }
 
-    .customBtn {
-        right: 15%;
-    }
+  .row li input {
+    height: 35px;
+  }
+
 }
 
-@media only screen and (max-width: 954px) {
-
-    .row li input {
-        width: 64%;
-    }
-
-    .customBtn {
-        right: 14%;
-    }
+@media screen and (min-width: 1141px) and (max-width: 1365px) {
+  .row li button, .row li button:disabled {
+    font-size: 12px;
+    padding: 12px 14px;
+  }
 }
 
-@media only screen and (max-width: 872px) {
-    .row li input {
-        width: 55%;
-    }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 
-    .customBtn {
-        right: 18%;
-    }
+  .row li input {
+    width: 50%;
+  }
+
+  .username_clear {
+    width: 25%;
+  }
+
+  .go_btn {
+    width: 18%;
+  }
+
+  .keywords_clear {
+    width: 47%;
+  }
+
 }
 
-@media only screen and (max-width: 755px) {
-    .row li input {
-        width: 50%;
-    }
+@media screen and (min-width: 280px) and (max-width: 767px) {
 
-    .customBtn {
-        right: 18%;
-    }
+  .row li input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .username_clear {
+    width: 48%;
+  }
+
+  .go_btn {
+    width: 48%;
+  }
+
+  .keywords_clear {
+    width: 100%;
+  }
+
+
+  .row > li:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 
-@media only screen and (max-width: 655px) {
-    .row li input {
-        width: 48%;
-        padding: 10px;
-        height: 32px;
-
-    }
-
-    .row li button {
-        padding: 10px !important;
-        font-size: 10px !important;
-    }
-
-    .customBtn {
-        right: 21%;
-    }
-}
 
 /*loader csss*/
 .lds-roller {
