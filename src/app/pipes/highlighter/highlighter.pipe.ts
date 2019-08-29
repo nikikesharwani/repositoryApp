@@ -11,7 +11,7 @@ export class HighlighterPipe implements PipeTransform {
   // pipe to highlight the matched substring in repos name
   transform(name: string, searchText: string): SafeHtml | string {
 
-    if (!name) { return []; }
+    if (!name) { return ''; }
     if (!searchText) { return name; }
 
     const search = searchText.toLowerCase();

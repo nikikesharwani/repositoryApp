@@ -13,18 +13,18 @@
           </li>
           <li class="row-inner">
               <input type="text" name="searchKey" [(ngModel)]="searchKey" placeholder="Enter keywords to search repository Eg.angular">
-              <button class="keywords_clear" [disabled]="!searchKey" (click)="searchKey = ''">Clear</button>
+              <button class="keywords_clear" [disabled]="!searchKey" (click)="searchKey = ''">Clear Search</button>
           </li>
         </ul>
     </form>
     <div id="filteredDiv" class="row">
         <div class="row-inner" *ngFor="let repo of repoNameList | filterdata : searchKey; trackBy: trackByFn">
-          <span [innerHTML]="repo | highlighter: searchKey"></span>
+          <span id="repoName" [innerHTML]="repo | highlighter: searchKey"></span>
         </div>
     </div>
     <div id="noRepository" class="row" *ngIf="reposNotFound">
         <div class="row-inner">
-            <span>Empty Repository for {{username}}</span>
+            <span id="emptyRepoMsg">Empty Repository for {{username}}</span>
         </div>
     </div>
 </div>
