@@ -17,14 +17,14 @@
           </li>
         </ul>
     </form>
-    <div id="filteredDiv" class="row">
+    <div id="filteredDiv">
         <div class="row-inner" *ngFor="let repo of repoNameList | filterdata : searchKey; trackBy: trackByFn">
           <span id="repoName" [innerHTML]="repo | highlighter: searchKey"></span>
         </div>
     </div>
-    <div id="noRepository" class="row" *ngIf="reposNotFound">
+    <div id="noRepository" *ngIf="reposNotFound">
         <div class="row-inner">
-            <span id="emptyRepoMsg">Empty Repository for {{username}}</span>
+            <span id="emptyRepoMsg"><i class="text-danger fa fa-exclamation-triangle"></i> Empty Repository for {{username}}</span>
         </div>
     </div>
 </div>

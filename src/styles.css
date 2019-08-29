@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
+
 /* Main Container and Form Css */
 body {
     font-size: 17px;
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+.text-danger {
+  color: red;
 }
 
 .container {
-    width: 50%;
     margin: 0 auto;
-    position: absolute;
-    left: 25%;
+    width: 1140px;
 }
 
 .keywords_clear {
@@ -37,10 +44,16 @@ h4 {
     box-sizing: border-box;
 }
 
+input {
+  font-family: 'Titillium Web', sans-serif;
+}
+
 form {
     padding: 15px;
     border: 1px solid #c9c8c8;
     background-color: #e4e7e8;
+    width: 75%;
+    margin: 0 auto;
 }
 
 .row,
@@ -98,6 +111,7 @@ form {
 
 .row li button, .row li button:disabled {
     margin-left: 0;
+    font-family: 'Titillium Web', sans-serif;
     padding: 12px 15px;
     border: none;
     color: #fff;
@@ -123,6 +137,11 @@ form {
     right: 10%;
 }
 
+#filteredDiv, #noRepository {
+  margin: 0 auto;
+  width: 75%;
+}
+
 #filteredDiv .row-inner, #noRepository .row-inner {
     /* margin-top: 10px; */
     padding: 15px;
@@ -144,6 +163,14 @@ input:focus {
     padding: 12px 12px;
   }
 
+  form, #filteredDiv, #noRepository {
+    width: 75%;
+  }
+
+  .container {
+    width: 100%;
+  }
+
   .row li input {
     height: 35px;
   }
@@ -163,6 +190,13 @@ input:focus {
     width: 50%;
   }
 
+  .container {
+    width: 100%;
+  }
+
+  form, #filteredDiv, #noRepository {  
+    width: 75%;
+  }
   .username_clear {
     width: 25%;
   }
@@ -177,13 +211,20 @@ input:focus {
 
 }
 
-@media screen and (min-width: 280px) and (max-width: 767px) {
+@media screen and (min-width: 300px) and (max-width: 767px) {
 
   .row li input {
     width: 100%;
     margin-bottom: 10px;
   }
 
+  .container {
+    width: 100%;
+  }
+
+  form, #filteredDiv, #noRepository {  
+    width: 75%;
+  }
   .username_clear {
     width: 48%;
   }
@@ -196,12 +237,46 @@ input:focus {
     width: 100%;
   }
 
-
   .row > li:not(:last-child) {
     margin-bottom: 20px;
   }
 }
 
+
+@media screen and (min-width: 80px) and (max-width: 299px) {
+
+  .row li input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  form, #filteredDiv, #noRepository {
+    width: 75%;
+  }
+  .username_clear {
+    width: 48%;
+  }
+
+  .go_btn {
+    width: 48%;
+  }
+
+  .keywords_clear {
+    width: 100%;
+  }
+
+  .row li button, .row li button:disabled { 
+    font-size: 9px;
+  }
+
+  .row > li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
 
 /*loader csss*/
 .lds-roller {
